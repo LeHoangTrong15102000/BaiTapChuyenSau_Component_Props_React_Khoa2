@@ -12,6 +12,17 @@ export default class Parent extends Component {
 
    name = "Hủ Tiếu Sa Đéc"
   render() {
+
+    // có thể truyền vào là một cái object gom lại các thuộc tính như source ảnh, giá , tên sản phẩm , mô tả
+    let propChild = {
+      id: 1,
+      name: "Hủ Tiếu Sa Đéc",
+      price: '20$',
+      desc: "Hủ Tiếu Sa Đéc là số một",
+      img: 'https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg'
+    }
+
+    
     return (
       <div>
         {/* <input type="text"/>
@@ -20,9 +31,19 @@ export default class Parent extends Component {
         <Child  propSource={this.src} propName={'Hủ Tiếu Sa Đéc 2'} /> */}
 
 
-        <ChildFunctional propSource={this.src} propName={this.name}/>
-        <ChildFunctional propSource={this.src} propName={'Hủ Tiếu Sa Đéc là nhất'}/>
-        <ChildFunctional propSource={this.src} propName={'Hủ Tiếu Sa Đéc là số 1'}/>
+        {/* <ChildFunctional propSource={this.src} propName={this.name}/> */}
+
+        <div className="container">
+          <h3>Product Detail</h3>
+          <Child propObject={propChild}/>
+        </div>
+
+
+        <div className="container">
+          <h3>Product Sa Đéc</h3>
+          <ChildFunctional propObject={propChild} />
+        </div>
+        
       </div>
     )
   }
