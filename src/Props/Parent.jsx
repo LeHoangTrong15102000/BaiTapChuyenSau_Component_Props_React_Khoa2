@@ -1,28 +1,44 @@
-import React, { Component } from 'react'
-import Child from './Child'
-import ChildFunctional from './ChildFunctional'
+import React, { Component } from 'react';
+import Child from './Child';
+import ChildFunctional from './ChildFunctional';
 // import Parent from './Parent'
 
 export default class Parent extends Component {
+  src =
+    'https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg';
 
+  name = 'Hủ Tiếu Sa Đéc';
 
+  product = {
+    id: 1,
+    name: 'Hủ Tiếu Sa Đéc',
+    price: '20$',
+    desc: 'Hủ Tiếu Sa Đéc là số một',
+    img: 'https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg',
+    size: [36, 37, 38, 39],
+  };
 
-   src = "https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg"
+  size = [36, 37, 38, 39];
 
+  // Còn muốn truyền funciton thì sao
+  showInfo = (name) => {
+    alert(name);
+  };
 
-   name = "Hủ Tiếu Sa Đéc"
+  // Tóm lại thì props có thể  giúp chúng ta truyền chuỗi , mảng , object và function
+  // props là thuộc tính từ component con nhận giá trị từ component cha truyền qua thông qua các propsName.
+
   render() {
-
     // có thể truyền vào là một cái object gom lại các thuộc tính như source ảnh, giá , tên sản phẩm , mô tả
     let propChild = {
       id: 1,
-      name: "Hủ Tiếu Sa Đéc",
+      name: 'Hủ Tiếu Sa Đéc',
       price: '20$',
-      desc: "Hủ Tiếu Sa Đéc là số một",
-      img: 'https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg'
-    }
+      desc: 'Hủ Tiếu Sa Đéc là số một',
+      img: 'https://images.foody.vn/res/g73/720857/prof/s640x400/foody-mobile-hfghfgh-jpg.jpg',
+    };
+    // Thay vì truyền nhiều thuộc tính  thì chúng ta sẽ truyền ít lại dưới dạng thuộc tính là object
 
-    
     return (
       <div>
         {/* <input type="text"/>
@@ -30,21 +46,23 @@ export default class Parent extends Component {
         <Child  propSource={this.src} propName={'Hủ Tiếu Sa Đéc 1'} />
         <Child  propSource={this.src} propName={'Hủ Tiếu Sa Đéc 2'} /> */}
 
-
         {/* <ChildFunctional propSource={this.src} propName={this.name}/> */}
 
         <div className="container">
           <h3>Product Detail</h3>
-          <Child propObject={propChild}/>
+          <Child
+            // Truyền giá trị là hàm vào để binding ra thì không cần 2 dấu ngoặc "()" vì khi () thì nó đã chạy hàm đó
+            showAlert={this.showInfo}
+            propObject={this.product}
+            showSize={this.size}
+          />
         </div>
-
 
         <div className="container">
           <h3>Product Sa Đéc</h3>
-          <ChildFunctional propObject={propChild} />
+          <ChildFunctional productItem={this.product} />
         </div>
-        
       </div>
-    )
+    );
   }
 }
