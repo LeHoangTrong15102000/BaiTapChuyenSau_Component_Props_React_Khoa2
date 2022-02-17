@@ -8,6 +8,8 @@ export default function ChildFunctional(props) {
   let { img, name, desc } = props.productItem; // không có dùng từ khóa this trong functional
 
   const renderSize = () => {
+
+    // lấy ra giá trị size từ productItem
     let { size } = props.productItem;
 
     return size.map((number, index) => {
