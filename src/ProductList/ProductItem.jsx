@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class ProductItem extends Component {
   render() {
@@ -7,7 +7,7 @@ export default class ProductItem extends Component {
 
     let { image, name, price, description } = this.props.dataProductItem;
     return (
-      <div className="card text-left" style={{ width: "350px" }}>
+      <div className="card text-left" style={{ width: '350px' }}>
         <img src={image} alt={image} />
         <div className="card-body bg-primary">
           <h5 className="card-title">{name}</h5>

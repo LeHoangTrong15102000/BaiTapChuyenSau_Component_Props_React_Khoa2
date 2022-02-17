@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
-import MultiComponent from "./React _Multi_Component/MultiComponent";
-import Props from "./Props/Props";
-import ProductList from "./ProductList/ProductList";
-import dataJson from "./Data/data.json";
-import DanhSachSanPham from "./ProductPhone/DanhSachSanPham";
+import logo from './logo.svg';
+import './App.css';
+import MultiComponent from './React _Multi_Component/MultiComponent';
+import Props from './Props/Props';
+import ProductList from './ProductList/ProductList';
+import dataJson from './Data/data.json';
+import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
 
 function App() {
   return (
@@ -12,16 +12,10 @@ function App() {
       <DanhSachSanPham />
     </div>
 
-
-
-
-
-
-
     // <div className="container-fluid">
     //   <div className="row">
     //     <div className="col-4">
-    //       {/* bên trái sẽ là chứa menu 
+    //       {/* bên trái sẽ là chứa menu
     //       Bootstrap khi chia như vậy thì cái độ rộng của nó sẽ dài theo cái nội dung -> nên muốn nó xuống giữa được thì phải sét chiều dài tương đối cho nó
     //       */}
     //       <div
@@ -52,16 +46,16 @@ function App() {
     //           aria-selected="false"
     //         >
     //           Shop
-    //         </a>           
+    //         </a>
     //       </div>
     //     </div>
-        
+
     //     {/* Lớp nội dụng của navs-tab
-        
+
     //       shop - của chúng ta sẽ là những đôi giầy
     //       Ở video sẽ hướng dẫn dụng cái productList của Component product
     //      */}
-    //     <div className="col-8 productList">        
+    //     <div className="col-8 productList">
     //       <div className="tab-content" id="v-pills-tabContent">
     //         <div
     //           className="tab-pane fade show active"
@@ -79,7 +73,7 @@ function App() {
     //         >
     //           Hello Le Hoang Trong
     //         </div>
-            
+
     //       </div>
     //     </div>
     //   </div>

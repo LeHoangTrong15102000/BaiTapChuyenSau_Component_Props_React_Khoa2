@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class DanhSachSanPham extends Component {
   // Ta có 2 component là DanhSachSanPham , SanPham,
@@ -16,39 +16,39 @@ export default class DanhSachSanPham extends Component {
   mangSanPham = [
     {
       maSP: 1,
-      tenSP: "VinSmart Live",
-      manHinh: "AMOLED, 6.2, Full HD+",
-      heDieuHanh: "Android 9.0 (Pie)",
-      cameraTruoc: "20 MP",
-      cameraSau: "Chính 48 MP & Phụ 8 MP, 5 MP",
-      ram: "4 GB",
-      rom: "64 GB",
+      tenSP: 'VinSmart Live',
+      manHinh: 'AMOLED, 6.2, Full HD+',
+      heDieuHanh: 'Android 9.0 (Pie)',
+      cameraTruoc: '20 MP',
+      cameraSau: 'Chính 48 MP & Phụ 8 MP, 5 MP',
+      ram: '4 GB',
+      rom: '64 GB',
       giaBan: 5700000,
-      hinhAnh: "./img/vsphone.jpg",
+      hinhAnh: './img/vsphone.jpg',
     },
     {
       maSP: 2,
-      tenSP: "Meizu 16Xs",
-      manHinh: "AMOLED, FHD+ 2232 x 1080 pixels",
-      heDieuHanh: "Android 9.0 (Pie); Flyme",
-      cameraTruoc: "20 MP",
-      cameraSau: "Chính 48 MP & Phụ 8 MP, 5 MP",
-      ram: "4 GB",
-      rom: "64 GB",
+      tenSP: 'Meizu 16Xs',
+      manHinh: 'AMOLED, FHD+ 2232 x 1080 pixels',
+      heDieuHanh: 'Android 9.0 (Pie); Flyme',
+      cameraTruoc: '20 MP',
+      cameraSau: 'Chính 48 MP & Phụ 8 MP, 5 MP',
+      ram: '4 GB',
+      rom: '64 GB',
       giaBan: 7600000,
-      hinhAnh: "./img/meizuphone.jpg",
+      hinhAnh: './img/meizuphone.jpg',
     },
     {
       maSP: 3,
-      tenSP: "Iphone XS Max",
-      manHinh: "OLED, 6.5, 1242 x 2688 Pixels",
-      heDieuHanh: "iOS 12",
-      cameraSau: "Chính 12 MP & Phụ 12 MP",
-      cameraTruoc: "7 MP",
-      ram: "4 GB",
-      rom: "64 GB",
+      tenSP: 'Iphone XS Max',
+      manHinh: 'OLED, 6.5, 1242 x 2688 Pixels',
+      heDieuHanh: 'iOS 12',
+      cameraSau: 'Chính 12 MP & Phụ 12 MP',
+      cameraTruoc: '7 MP',
+      ram: '4 GB',
+      rom: '64 GB',
       giaBan: 27000000,
-      hinhAnh: "./img/applephone.jpg",
+      hinhAnh: './img/applephone.jpg',
     },
   ];
 
@@ -56,15 +56,15 @@ export default class DanhSachSanPham extends Component {
   state = {
     sanPhamChiTiet: {
       maSP: 1,
-      tenSP: "VinSmart Live",
-      manHinh: "AMOLED, 6.2, Full HD+",
-      heDieuHanh: "Android 9.0 (Pie)",
-      cameraTruoc: "20 MP",
-      cameraSau: "Chính 48 MP & Phụ 8 MP, 5 MP",
-      ram: "4 GB",
-      rom: "64 GB",
+      tenSP: 'VinSmart Live',
+      manHinh: 'AMOLED, 6.2, Full HD+',
+      heDieuHanh: 'Android 9.0 (Pie)',
+      cameraTruoc: '20 MP',
+      cameraSau: 'Chính 48 MP & Phụ 8 MP, 5 MP',
+      ram: '4 GB',
+      rom: '64 GB',
       giaBan: 5700000,
-      hinhAnh: "./img/vsphone.jpg",
+      hinhAnh: './img/vsphone.jpg',
     },
   };
 
@@ -72,16 +72,29 @@ export default class DanhSachSanPham extends Component {
   renderSanPham = () => {
     return this.mangSanPham.map((item, index) => {
       return (
-        <div key={index} className="col-4 mt-3 text-center" style={{ width: "350px" }}>
-          <div className="card text-left" >
-            <img src={item.hinhAnh} alt={item.hinhAnh} />
-            <div className="card-body bg-secondary">
+        <div
+          key={index}
+          className="col-4 mt-3 text-center w3-container w3-center w3-animate-zoom"
+          style={{ width: '350px' }}
+        >
+          <div className="card text-left text-center">
+            <img
+              style={{ height: 350 }}
+              src={item.hinhAnh}
+              alt={item.hinhAnh}
+            />
+            <div className="card-body bg-info">
               <h5 className="card-title">{item.tenSP}</h5>
               <p className="card-text">Hệ điều hành: {item.heDieuHanh}</p>
               <p className="card-text">Giá bán: {item.giaBan}</p>
-              <button className="btn btn-success text-white">
+              <button
+                onClick={() => {
+                  this.xemChiTiet(item);
+                }}
+                className="btn btn-success text-white"
+              >
                 Xem chi tiết
-                <i className="fa fa-shopping-cart"></i>
+                <i className="fa fa-info-circle ml-2"></i>
               </button>
             </div>
           </div>
@@ -90,6 +103,13 @@ export default class DanhSachSanPham extends Component {
     });
   };
 
+  // Xây dựng nút sự kiện click vào xem chi tiết cho sản phẩm
+  // Mỗi lần click vào thay đổi state thông tin sản phẩm
+  xemChiTiet = (selectSanPham) => {
+    this.setState({
+      sanPhamChiTiet: selectSanPham,
+    });
+  };
   render() {
     return (
       <div className="container">
@@ -98,7 +118,62 @@ export default class DanhSachSanPham extends Component {
         {/* row đầu tiên sẽ viết hàm render ra sản phẩm */}
         <div className="row">{this.renderSanPham()}</div>
 
-        <div className="row">{/* Hiện chi tiết sản phẩm ở đâys */}</div>
+        <div className="row">
+          {/* Hiện chi tiết sản phẩm ở đâys */}
+
+          <div className="col-4">
+            <h3 style={{ fontWeight: '600' }} className="text-center text-dark">
+              {this.state.sanPhamChiTiet.tenSP}
+            </h3>
+            <img
+              // Cho nó bằng với column chứa nó
+              style={{ width: '100%' }}
+              src={this.state.sanPhamChiTiet.hinhAnh}
+              alt={this.state.sanPhamChiTiet.hinhAnh}
+            />
+          </div>
+          <div className="col-8">
+            <h3 style={{ fontWeight: 'bold' }} className="">
+              Thông số kỹ thuật
+            </h3>
+
+            <table class="table">
+              {/* Muốn format lại code thì nhấn ctrl+F -> tìm cần thay thế và cái
+              muốn thay thế */}
+              <thead>
+                <tr>
+                  <th>Màn hình</th>
+                  <th>{this.state.sanPhamChiTiet.manHinh}</th>
+                </tr>
+
+                <tr>
+                  <th>Hệ điều hành</th>
+                  <th>{this.state.sanPhamChiTiet.heDieuHanh}</th>
+                </tr>
+
+                <tr>
+                  <th>Camera trước</th>
+                  <th>{this.state.sanPhamChiTiet.cameraTruoc}</th>
+                </tr>
+
+                <tr>
+                  <th>Camera sau</th>
+                  <th>{this.state.sanPhamChiTiet.cameraSau}</th>
+                </tr>
+
+                <tr>
+                  <th>RAM</th>
+                  <th>{this.state.sanPhamChiTiet.ram}</th>
+                </tr>
+
+                <tr>
+                  <th>ROM</th>
+                  <th>{this.state.sanPhamChiTiet.rom}</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
       </div>
     );
   }
