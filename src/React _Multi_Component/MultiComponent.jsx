@@ -23,6 +23,11 @@ export default class MultiComponent extends Component {
      * 
      */
 
+
+
+    // Bài học hôm nay sẽ học về truyền function - truyền sự kiện - nhận dữ liệu thông qua các cấp components
+    // Qua cái ví dụ sẽ hiểu được tại sao chúng ta phải truyền function và truyền function như thế nào
+
     
   render() {
     return (
