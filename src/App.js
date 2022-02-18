@@ -5,13 +5,24 @@ import Props from './Props/Props';
 import ProductList from './ProductList/ProductList';
 import dataJson from './Data/data.json';
 import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
+import CarStore from './CarStore/CarStore';
 
 function App() {
   return (
-    <div className="container-fluid">
-      <DanhSachSanPham />
+
+    // ******** Bài tập Product Car
+    <div className='container-fluid'>
+      <CarStore />
     </div>
 
+
+
+    //******** bài tập Phone Product
+    // <div className="container-fluid">
+    //   <DanhSachSanPham />
+    // </div>
+
+    //******** Bài tập Shoes Product
     // <div className="container-fluid">
     //   <div className="row">
     //     <div className="col-4">

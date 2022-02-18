@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SanPham from './SanPham';
 
 export default class DanhSachSanPham extends Component {
   // Ta có 2 component là DanhSachSanPham , SanPham,
@@ -69,35 +70,16 @@ export default class DanhSachSanPham extends Component {
   };
 
   // Hàm render sản phẩm
-  renderSanPham = () => {
+  renderSanPham = () => { 
     return this.mangSanPham.map((item, index) => {
       return (
         <div
           key={index}
           className="col-4 mt-3 text-center w3-container w3-center w3-animate-zoom"
           style={{ width: '350px' }}
-        >
-          <div className="card text-left text-center">
-            <img
-              style={{ height: 350 }}
-              src={item.hinhAnh}
-              alt={item.hinhAnh}
-            />
-            <div className="card-body bg-info">
-              <h5 className="card-title">{item.tenSP}</h5>
-              <p className="card-text">Hệ điều hành: {item.heDieuHanh}</p>
-              <p className="card-text">Giá bán: {item.giaBan}</p>
-              <button
-                onClick={() => {
-                  this.xemChiTiet(item);
-                }}
-                className="btn btn-success text-white"
-              >
-                Xem chi tiết
-                <i className="fa fa-info-circle ml-2"></i>
-              </button>
-            </div>
-          </div>
+        > 
+          {/* Nếu gọi cái hàm ở đây thì chưa làm là nó đã chạy rồi xemChiTiet={this.xemChiTiet()} => Nếu như vậy thì chưa gọi là nó đã chạy */}
+          <SanPham xemChiTiet={this.xemChiTiet} sanPhamProps={item}/>
         </div>
       );
     });
