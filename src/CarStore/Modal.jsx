@@ -4,6 +4,7 @@ export default class Modal extends Component {
   render() {
 
     // Sau khi đã lấy 2 thuộc tính của xe xong chúng ta có thể bỏ nút button của modal đi
+    let { content } = this.props;
     return (
       <div>
         {/* <button
@@ -26,7 +27,7 @@ export default class Modal extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Modal title</h5>
+                <h5 className="modal-title">{content.name}</h5>
                 <button
                   type="button"
                   className="close"
@@ -37,7 +38,7 @@ export default class Modal extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="container-fluid">Add rows here</div>
+                <img style={{width: '100%'}} src={content.img} alt={content.img}/>
               </div>
               <div className="modal-footer">
                 <button

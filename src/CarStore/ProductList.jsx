@@ -8,7 +8,7 @@ export default class ProductList extends Component {
     renderProductItem = () => {
         return this.props.productsData.map((product, index) => {
             return <div className="col-3" key={index}>
-                <ProductItem item={product} setStateModal={this.props.setStateModal}/>
+                <ProductItem setStateModal={this.props.setStateModal} item={product} />
             </div>
         })
     }

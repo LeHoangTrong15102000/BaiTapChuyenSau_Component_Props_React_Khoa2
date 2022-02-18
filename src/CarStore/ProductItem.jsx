@@ -19,7 +19,7 @@ export default class ProductItem extends Component {
           <p className="card-text">{item.price}</p>
           {/* Là cái nút button này có chức năng y hệt như thằng modal */}
           <button
-          
+            onClick={() => {this.props.setStateModal(item)}}
             data-toggle="modal"
             data-target="#modelId"
             className="btn btn-success"
