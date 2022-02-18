@@ -110,6 +110,7 @@ export default class DanhSachSanPham extends Component {
       sanPhamChiTiet: selectSanPham,
     });
   };
+  // Video sau sẽ tách cái renderSanPham ra thành một component riêng thì sẽ có nhiều điều để nói.
   render() {
     return (
       <div className="container">
