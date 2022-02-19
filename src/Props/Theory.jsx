@@ -15,4 +15,8 @@
 // ******************************************** Tóm lại
 // Tùy trường hợp thì chúng ta dùng props để truyền sự kiện, props truyền sự kiện khi nguồn dữ liệu nằm ngoài và nút xử lý nằm bên trong
 // Còn khi nguồn dữ liệu nó ở bên trong và nút xử lý nằm bên ngoài thì dùng React.createRef() . khi đó thì chúng ta sẽ xử lý
-// Còn nút và dữ liệu đều nằm trong component thì gọi lên sử dụng bình thường.
+// Còn nút và dữ liệu đều nằm trong component thì gọi lên sử dụng bình thường.?
+
+
+// ******************************************* Bài tập giỏ hàng - shopping cart
+// Dữ liệu nào trong component thay đổi thí chúng ta sẽ đặt nó trong state của component

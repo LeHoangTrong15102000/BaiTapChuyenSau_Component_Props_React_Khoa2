@@ -6,15 +6,21 @@ import ProductList from './ProductList/ProductList';
 import dataJson from './Data/data.json';
 import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
 import CarStore from './CarStore/CarStore';
+import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 
 function App() {
   return (
 
-    // **************  Bài tập truyền children giữa các component
-    <div className="container-fluid">
-      <Props />
+    // ********************* Bài tập giỏ hàng trong React
+    <div className="container0-fluid">
+      <ShoppingCart />
     </div>
+
+    // **************  Bài tập truyền children giữa các component
+    // <div className="container-fluid">
+    //   <Props />
+    // </div>
 
     // ******** Bài tập Product Car
     // <div className='container-fluid'>
