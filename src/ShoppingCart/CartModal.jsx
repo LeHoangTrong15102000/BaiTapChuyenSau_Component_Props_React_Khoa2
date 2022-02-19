@@ -1,27 +1,30 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class CartModal extends Component {
-
-
   renderCart = () => {
-    let {content} = this.props;
+    let { content } = this.props;
 
-    return content.map((item ,index ) => {
-      return <tr key={index}>
-        <td>{item.maSP}</td>
-        <td>
-          <img style={{width: '100px'}} src={item.hinhAnh} alt={item.hinhAnh}/>
-        </td>
-        <td>{item.tenSP}</td>
-        <td>{item.soLuong}</td>
-        <td>{item.donGia}</td>
-        <td>{item.donGia * item.soLuong}</td>
-      </tr>
-    })
-  }
+    return content.map((item, index) => {
+      return (
+        <tr key={index}>
+          <td>{item.maSP}</td>
+          <td>
+            <img
+              style={{ width: '100px' }}
+              src={item.hinhAnh}
+              alt={item.hinhAnh}
+            />
+          </td>
+          <td>{item.tenSP}</td>
+          <td>{item.soLuong}</td>
+          <td>{item.donGia}</td>
+          <td>{item.soLuong * item.donGia}</td>
+        </tr>
+      );
+    });
+  };
 
   // Viết phương thức thành tiền cho sản phẩm
-
 
   render() {
     // let { content } = this.props;
@@ -44,7 +47,11 @@ export default class CartModal extends Component {
           aria-labelledby="modelTitleId"
           aria-hidden="true"
         >
-          <div style={{minWidth: '1000px'}} className="modal-dialog" role="document">
+          <div
+            style={{ minWidth: '1000px' }}
+            className="modal-dialog"
+            role="document"
+          >
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Giỏ hàng</h5>
@@ -70,9 +77,7 @@ export default class CartModal extends Component {
                       <th>Thành tiền</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {this.renderCart()}
-                  </tbody>
+                  <tbody>{this.renderCart()}</tbody>
                 </table>
               </div>
               <div className="modal-footer">

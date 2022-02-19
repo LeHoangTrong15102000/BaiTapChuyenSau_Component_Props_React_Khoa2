@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class ProductItem extends Component {
   render() {
@@ -19,13 +19,18 @@ export default class ProductItem extends Component {
           <p className="card-text">{item.price}</p>
           {/* Là cái nút button này có chức năng y hệt như thằng modal */}
           <button
-            onClick={() => {this.props.setStateModal(item)}}
+            onClick={() => {
+              this.props.setStateModal(item);
+            }}
             data-toggle="modal"
             data-target="#modelId"
             className="btn btn-success"
           >
             Xem chi tiết
-            <i style={{marginLeft: '5px'}} className="fa fa-shopping-cart"></i>
+            <i
+              style={{ marginLeft: '5px' }}
+              className="fa fa-shopping-cart"
+            ></i>
           </button>
         </div>
       </div>
