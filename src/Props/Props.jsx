@@ -15,17 +15,41 @@ export default class Props extends Component {
     // Đối với stateful và stateless component có các cách sử dụng props khác nhau.
 
 
+    //  Tóm lại có thể truyền dữ liệu qua props hoặc là children
+
+    // DOM tới component con
+    refParent = React.createRef();
+
+
+    // Hàm sự kiện ở đây sẽ gọi tới hàm sự kiện changeTitle ở component con
+    changeTitle = () => {
+      this.refParent.current.changeTitle();
+    }
+
     
   render() {
     return (
       <div>
-        {/* Truyền component dưới dạng props */}
-        
+        {/* Truyền component dưới dạng props */}       
         {/* <Parent component={DanhSachSanPham}/> */}
 
 
-        Chúng ta sẽ thực hiện nâng cao hơn một chút là truyền component thông qua cách là gọi hàm đó
-        <Parent component={() => {return <DanhSachSanPham />}}/>
+        {/* Chúng ta sẽ thực hiện nâng cao hơn một chút là truyền component thông qua cách là gọi hàm đó */}
+        {/* <Parent component={() => {return <DanhSachSanPham />}}/> */}
+
+        {/* Thông thường truyền props com,ponent người ta thường truyền ở giữa cặp HTML */}
+        <button className="btn btn-info" onClick={this.changeTitle}>Change Title</button>
+        {/* DOM tới component con, Component là mốt đối tượng thì component cha DOM tới sẽ sở hữu tất cả các phương thức và thuộc tính */}
+        <Parent ref={this.refParent}>
+          {/* Thì có nghĩa là bên đây chúng ta t ruyền bao nhiêu cái children ở đây thì bên phía bên kia nó sẽ hốt hết tất cả các children */}
+          {/* <DanhSachSanPham />
+          <h3>Hello CyberLearn</h3>
+          <DanhSachSanPham /> */}
+          <DanhSachSanPham />
+        </Parent>
+        {/* this.props.children còn có cái ưu điểm nữa là ở kết quả mà nó trả về cho mình còn là một cái mảng nữa , mảng danhsach của các sản phẩm children 
+        mà chúng ta truyền vào*/}
+
       </div>
     )
   }

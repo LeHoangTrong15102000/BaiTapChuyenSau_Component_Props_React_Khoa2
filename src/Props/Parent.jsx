@@ -28,6 +28,18 @@ export default class Parent extends Component {
   // Tóm lại thì props có thể  giúp chúng ta truyền chuỗi , mảng , object và function
   // props là thuộc tính từ component con nhận giá trị từ component cha truyền qua thông qua các propsName.
 
+
+  state = {
+    title: "Cyberlearn Xin chào các bạn"
+  }
+
+
+  changeTitle = () => {
+    this.setState({
+      title: "Lê Hoàng Trọng"
+    })
+  }
+
   render() {
     // có thể truyền vào là một cái object gom lại các thuộc tính như source ảnh, giá , tên sản phẩm , mô tả
     let propChild = {
@@ -66,7 +78,19 @@ export default class Parent extends Component {
           {/* <this.props.component /> */}
 
           {/* Truyền dưới dạng là hàm => gọi hàm thì sẽ trả về là component */}
-          {this.props.component()}
+          {/* {this.props.component()} */}
+
+          {/* Muốn lấy thuộc tính children thì chúng ta gọi tới phương thức là this.props.children */}
+          {/* {this.props.children.map((component , index) => {
+            return component
+          })} */}
+
+          {this.props.children}
+        </div>
+
+        <div className='container'>
+          <h1>{this.state.title}</h1>
+          <button className="btn btn-info" onClick={this.changeTitle}>change title</button>
         </div>
       </div>
     );
