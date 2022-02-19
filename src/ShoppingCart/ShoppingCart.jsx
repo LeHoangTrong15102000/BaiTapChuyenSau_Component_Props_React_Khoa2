@@ -10,7 +10,46 @@ export default class ShoppingCart extends Component {
   // Thì những cái gì tính toán được thì chúng ta sẽ không lưu vào cơ sở dữ liệu
   // Khi mà làm button giỏ hàng thì nó sẽ có thêm nguồn dữ liệu là state giỏ hàng
 
-  state = {};
+  state = {
+    shoppingCart: [
+      {
+        maSP: 1,
+        hinhAnh: "./img/vsphone.jpg",
+        tenSP: "VinSmart Live",
+        soLuong: 1,
+        donGia: 0,
+        // thanhTien() {
+        //   return this.donGia * this.soLuong
+        // }
+      },
+    ],
+  };
+
+  // Viết phương thức setState chính tại cái component chứa giỏ hàng đó luôn
+  // Viết phương thức thay đổi giỏ hàng
+  addCart = (newProduct) => {
+
+    console.log(newProduct)
+
+    let spGioHang = {
+      maSP: newProduct.maSP,
+      tenSP: newProduct.tenSP,
+      donGia: newProduct.giaBan,
+      soLuong: 1,
+      hinhAnh: newProduct.hinhAnh,
+    }
+
+    // push sản phẩm mới thêm vào giỏ hàng vào state.shoppingCart
+    // this.state.shoppingCart.push(spGioHang);
+
+    // Hoặc là viết theo ES6
+    let gioHangCapNhat = [... this.state.shoppingCart, spGioHang]
+    
+    // Cuối cùng là gán giỏ hàng đó với giỏ hàng đã được thêm sản phẩm
+    this.setState({
+      shoppingCart: gioHangCapNhat,
+    })
+  }
 
   render() {
     // Bước 1: Dàn layout -> Done
@@ -20,15 +59,17 @@ export default class ShoppingCart extends Component {
       <div className="container-fluid">
         <h3 className="display-4 text-center">BÀI TẬP GIỎ HÀNG</h3>
         <div style={{ fontSize: "20px" }} className="text-right mr-5">
-          <span style={{ cursor: "pointer" , width: "17px"}} data-toggle="modal" data-target="#modelId">
-            Giỏ hàng:{" "}
-            <i class="fa fa-shopping-cart">
-              (0)
-            </i>
+          <span
+            style={{ cursor: "pointer", width: "17px" }}
+            data-toggle="modal"
+            data-target="#modelId"
+          >
+            Giỏ hàng: <i class="fa fa-shopping-cart">(0)</i>
           </span>
         </div>
-        <CartModal content={this.state.productDetail} />
-        <ProductList />
+         {/* Truyền dữ liệu tĩnh cho giỏ hàng */}
+        <CartModal content={this.state.shoppingCart} />
+        <ProductList addCart={this.addCart} />
       </div>
     );
   }

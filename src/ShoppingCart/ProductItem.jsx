@@ -27,7 +27,7 @@ export default class ProductItem extends Component {
             <i className="fa fa-info-circle ml-2"></i>
           </button>
 
-          <button onClick={() => {}} className="btn btn-secondary ml-2">
+          <button onClick={() => {this.props.addCart(sanPhamProps)}} className="btn btn-secondary ml-2">
             Thêm giỏ hàng
             <i class="fa fa-shopping-cart ml-2"></i>
           </button>

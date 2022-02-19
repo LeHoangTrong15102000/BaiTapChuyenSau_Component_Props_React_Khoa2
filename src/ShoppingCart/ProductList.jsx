@@ -41,7 +41,7 @@ export default class ProductList extends Component {
     },
   ];
 
-  xemChiTiet = () => {};
+  addCart = () => {};
 
   // Hàm render sản phẩm
   renderSanPham = () => {
@@ -53,7 +53,7 @@ export default class ProductList extends Component {
           style={{ width: "350px" }}
         >
           {/* Nếu gọi cái hàm ở đây thì chưa làm là nó đã chạy rồi xemChiTiet={this.xemChiTiet()} => Nếu như vậy thì chưa gọi là nó đã chạy */}
-          <ProductItem xemChiTiet={this.xemChiTiet} sanPhamProps={item} />
+          <ProductItem addCart={this.props.addCart} sanPhamProps={item} />
         </div>
       );
     });

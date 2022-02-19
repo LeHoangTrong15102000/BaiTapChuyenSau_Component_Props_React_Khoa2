@@ -1,8 +1,30 @@
 import React, { Component } from "react";
 
 export default class CartModal extends Component {
-    
+
+
+  renderCart = () => {
+    let {content} = this.props;
+
+    return content.map((item ,index ) => {
+      return <tr key={index}>
+        <td>{item.maSP}</td>
+        <td>
+          <img style={{width: '100px'}} src={item.hinhAnh} alt={item.hinhAnh}/>
+        </td>
+        <td>{item.tenSP}</td>
+        <td>{item.soLuong}</td>
+        <td>{item.donGia}</td>
+        <td>{item.donGia * item.soLuong}</td>
+      </tr>
+    })
+  }
+
+  // Viết phương thức thành tiền cho sản phẩm
+
+
   render() {
+    // let { content } = this.props;
     return (
       <div>
         {/* <button
@@ -22,11 +44,11 @@ export default class CartModal extends Component {
           aria-labelledby="modelTitleId"
           aria-hidden="true"
         >
-          <div className="modal-dialog" role="document">
+          <div style={{minWidth: '1000px'}} className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title"></h5>
-                <p>Giá tiền: </p>
+                <h5 className="modal-title">Giỏ hàng</h5>
+                <p></p>
                 <button
                   type="button"
                   className="close"
@@ -37,11 +59,21 @@ export default class CartModal extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <img
-                  style={{ width: "100%" }}
-                  src=""
-                  alt=""
-                />
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Mã sản phẩm</th>
+                      <th>Hình ảnh</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Số lượng</th>
+                      <th>Đơn giá</th>
+                      <th>Thành tiền</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.renderCart()}
+                  </tbody>
+                </table>
               </div>
               <div className="modal-footer">
                 <button
