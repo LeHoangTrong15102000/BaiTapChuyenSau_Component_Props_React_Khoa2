@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DanhSachSanPham from '../ProductPhone/DanhSachSanPham'
 import Parent from './Parent'
 
 export default class Props extends Component {
@@ -18,7 +19,13 @@ export default class Props extends Component {
   render() {
     return (
       <div>
-        <Parent />
+        {/* Truyền component dưới dạng props */}
+        
+        {/* <Parent component={DanhSachSanPham}/> */}
+
+
+        Chúng ta sẽ thực hiện nâng cao hơn một chút là truyền component thông qua cách là gọi hàm đó
+        <Parent component={() => {return <DanhSachSanPham />}}/>
       </div>
     )
   }

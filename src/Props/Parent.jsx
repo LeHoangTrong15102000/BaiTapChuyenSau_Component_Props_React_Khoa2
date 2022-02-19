@@ -61,6 +61,12 @@ export default class Parent extends Component {
         <div className="container">
           <h3>Product Sa Đéc</h3>
           <ChildFunctional productItem={this.product} />
+
+          {/* Truyền đưới dạng thẻ thì ghi ra component dưới dạng thẻ */}
+          {/* <this.props.component /> */}
+
+          {/* Truyền dưới dạng là hàm => gọi hàm thì sẽ trả về là component */}
+          {this.props.component()}
         </div>
       </div>
     );

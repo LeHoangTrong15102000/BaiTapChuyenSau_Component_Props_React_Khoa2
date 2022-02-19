@@ -7,13 +7,19 @@ import dataJson from './Data/data.json';
 import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
 import CarStore from './CarStore/CarStore';
 
+
 function App() {
   return (
 
-    // ******** Bài tập Product Car
-    <div className='container-fluid'>
-      <CarStore />
+    // **************  Bài tập truyền children giữa các component
+    <div className="container-fluid">
+      <Props />
     </div>
+
+    // ******** Bài tập Product Car
+    // <div className='container-fluid'>
+    //   <CarStore />
+    // </div>
 
 
 
