@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//set up redux, Provider là một cái thẻ do react-redux cung cấp cho mình
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './Redux/rootReducer';
+
+const store = createStore(
+  rootReducer
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 ReactDOM.render(
-  
+  <Provider store={store}>
     <App />
-  ,
+  </Provider>,
   document.getElementById('root')
 );
 

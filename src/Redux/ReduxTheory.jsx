@@ -14,4 +14,7 @@
     - Chỉ nguồn dữ liệu làm cho giao diện thay đổi thì chúng ta mới đặt nó trong store (Redux store)
     
     - Làm 2 đến 3 bài tập ví dụ là chúng ta sẽ nắm được redux
+
+
+    // Bước đầu tiên vào file index.js set up redux
 */

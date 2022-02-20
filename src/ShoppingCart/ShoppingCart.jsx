@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import CartModal from "./CartModal";
-import ProductList from "./ProductList";
+import React, { Component } from 'react';
+import CartModal from './CartModal';
+import ProductList from './ProductList';
 
 export default class ShoppingCart extends Component {
   // Bài ngày hôm này sẽ nói về phần còn lại của props đó là children và nó thường được sử dụng trong những tình huống như thế nào
@@ -124,7 +124,7 @@ export default class ShoppingCart extends Component {
       // thêm điều kiện number === -1 để biết khi mà nút "-" đang được click và số lượng nhỏ hơn bằng 1
       if (shoppingCart[index].soLuong <= 1 && number === -1) {
         // Thì chúng ta không cho click nữa có nghĩa là gán giá trị cho soLuong là 1
-        alert("Số lượng tối thiểu phải là 1!!");
+        alert('Số lượng tối thiểu phải là 1!!');
         return; // không trả về cái gì hết
       }
 
@@ -146,13 +146,13 @@ export default class ShoppingCart extends Component {
     return (
       <div className="container-fluid">
         <h3 className="display-4 text-center">BÀI TẬP GIỎ HÀNG</h3>
-        <div style={{ fontSize: "20px" }} className="text-right mr-5">
+        <div style={{ fontSize: '20px' }} className="text-right mr-5">
           <span
-            style={{ cursor: "pointer", width: "17px" }}
+            style={{ cursor: 'pointer', width: '17px' }}
             data-toggle="modal"
             data-target="#modelId"
           >
-            Giỏ hàng:{" "}
+            Giỏ hàng:{' '}
             <i class="fa fa-shopping-cart">({this.tinhTongSoLuong()})</i>
           </span>
         </div>
