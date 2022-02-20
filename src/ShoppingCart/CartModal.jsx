@@ -1,30 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class CartModal extends Component {
   renderCart = () => {
-    let { content } = this.props;
+    let { gioHang } = this.props;
 
-    return content.map((item, index) => {
-      return (
+    return gioHang.map((item, index) => {
+      return ( 
         <tr key={index}>
           <td>{item.maSP}</td>
           <td>
             <img
-              style={{ width: '100px' }}
+              style={{ width: "100px" }}
               src={item.hinhAnh}
               alt={item.hinhAnh}
             />
           </td>
           <td>{item.tenSP}</td>
           <td>
-            <button className="btn btn-primary">-</button>
+            <button onClick={() => {this.props.tangGiamSoLuong(item.maSP,-1)}} className="btn btn-primary mr-2">-</button>
             {item.soLuong}
-            <button className="btn btn-primary">+</button>
+            <button onClick={() => {this.props.tangGiamSoLuong(item.maSP,1)}} className="btn btn-primary ml-2">+</button>
           </td>
-          <td>{item.donGia}</td>
-          <td>{item.soLuong * item.donGia}</td>
+          <td>{(item.donGia).toLocaleString()}</td>
+          <td>{(item.soLuong * item.donGia).toLocaleString()}</td>
           <td>
-            <button className="btn btn-danger">Xóa</button>
+            <button
+              onClick={() => {
+                this.props.deleteProduct(item.maSP);
+              }}
+              className="btn btn-danger"
+            >
+              Xóa
+            </button>
             <button className="btn btn-primary ml-1">Chỉnh sửa</button>
           </td>
         </tr>
@@ -33,6 +40,15 @@ export default class CartModal extends Component {
   };
 
   // Viết phương thức thành tiền cho sản phẩm
+  // Dựa vào props giỏ hàng mà chúng ta truyền qua từ bên kia để tính tổng tiền cho sản phẩm
+  tinhTongTien = () => {
+    let { gioHang } = this.props;
+    
+    return gioHang.reduce((total, item, index) => {
+      return total += item.donGia * item.soLuong;
+    },0).toLocaleString();
+
+  }
 
   render() {
     // let { content } = this.props;
@@ -56,7 +72,7 @@ export default class CartModal extends Component {
           aria-hidden="true"
         >
           <div
-            style={{ minWidth: '1000px' }}
+            style={{ minWidth: "1000px" }}
             className="modal-dialog"
             role="document"
           >
@@ -73,6 +89,7 @@ export default class CartModal extends Component {
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
+              {/* Để table và modal-body để render ra giao diện */}
               <div className="modal-body">
                 <table className="table">
                   <thead>
@@ -87,6 +104,14 @@ export default class CartModal extends Component {
                     </tr>
                   </thead>
                   <tbody>{this.renderCart()}</tbody>
+                  <tfoot>
+                    <tr>
+                      <td colSpan="4"></td>
+                      <td>Tổng tiền: </td>
+                      {/* Viết phương thức tính tổng tiền */}
+                      <td>{this.tinhTongTien()}</td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
               <div className="modal-footer">

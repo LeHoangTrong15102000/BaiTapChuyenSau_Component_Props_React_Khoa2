@@ -11,3 +11,13 @@
 // *************************** Video tiếp theo sẽ học xử lý các tính năng tiếp theo
 // Đồng thời ôn lại props truyền props và xử lý như thế nào
 // Thì giao diện chứa nút xóa giỏ hàng sẽ nằm trong component giỏ hàng
+// Khi mà nhấn vào nút xóa thì cái mảng sản phẩm nó sẽ xóa sản phẩm trong giỏ hàng với cái index trùng với id của sản phẩm đó trong giỏ hàng
+// Làm thế nào để truyền phương thức setState từ nơi shoppingCart -> truyền sang cartModal > đến nơi chứa nút xử lý, lấy nguồn dữ liệu truyền xuống thông qua props
+// Nếu mà đã lấy ra được mã SP rồi việc tiếp theo chúng ta cần thực hiện là xóa nó khỏi mảng sản phẩm của chúng ta trong giỏ hàng
+// Rồi tiếp theo chúng ta sẽ viết hàm cập nhật số lượng ở ngay giao diện giỏ hàng để người dùng biết trong giỏ hàng hiện đang có bn sản phẩm rồi
+
+// ************************* Video tăng giảm số lượng giỏ hàng của đơn hàng
+// Tăng và giảm số lượng đơn hàng thì làm giao diện đơn hàng thay đổi cụ thể là nguồn dữ liệu giỏ hàng thay đổi => thì nó lại đụng tới cái state giỏ hàng.
+// Khi mà đụng tới state rồi thì chúng ta phải biết setState giỏ hàng lại => Viết phương thức tăng giảm số lương tại nơi chứa state(giao diện giỏ hàng)
+
+// ************************* Bài học ngày hôm sau sẽ học kiến thức mới trong reactjs
