@@ -11,7 +11,7 @@ export default class ShoppingCart extends Component {
   // Khi mà làm button giỏ hàng thì nó sẽ có thêm nguồn dữ liệu là state giỏ hàng
 
   state = {
-    // Ban đầu cho mảng giỏ hàng của chúng ta là rỗng luôn.
+    // Ban đầu cho mảng giỏ hàng của chúng ta là rỗng luôn, để mỗi lần mình nhấn vào sp thì ta sẽ push sản phẩm đó vào mảng sản phẩm.
     shoppingCart: [
       // {
       //   maSP: 1,
@@ -66,7 +66,8 @@ export default class ShoppingCart extends Component {
     });
   };
 
-  //   Xây dựng nút tăng giảm số lượng ở bên trong giỏ hàng của sản phẩm, kể cả xỏa sản phẩm khỏi giỏ hàng
+  // Xây dựng nút tăng giảm số lượng ở bên trong giỏ hàng của sản phẩm, kể cả xóa sản phẩm khỏi giỏ hàng
+
 
   render() {
     // Bước 1: Dàn layout -> Done

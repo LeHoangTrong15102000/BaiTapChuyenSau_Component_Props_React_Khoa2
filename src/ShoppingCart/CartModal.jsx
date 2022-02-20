@@ -16,9 +16,17 @@ export default class CartModal extends Component {
             />
           </td>
           <td>{item.tenSP}</td>
-          <td>{item.soLuong}</td>
+          <td>
+            <button className="btn btn-primary">-</button>
+            {item.soLuong}
+            <button className="btn btn-primary">+</button>
+          </td>
           <td>{item.donGia}</td>
           <td>{item.soLuong * item.donGia}</td>
+          <td>
+            <button className="btn btn-danger">Xóa</button>
+            <button className="btn btn-primary ml-1">Chỉnh sửa</button>
+          </td>
         </tr>
       );
     });
@@ -75,6 +83,7 @@ export default class CartModal extends Component {
                       <th>Số lượng</th>
                       <th>Đơn giá</th>
                       <th>Thành tiền</th>
+                      <th>Chức năng</th>
                     </tr>
                   </thead>
                   <tbody>{this.renderCart()}</tbody>
