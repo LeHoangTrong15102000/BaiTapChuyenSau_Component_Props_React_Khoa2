@@ -125,7 +125,7 @@ export default class ShoppingCart extends Component {
       if (shoppingCart[index].soLuong <= 1 && number === -1) {
         // Thì chúng ta không cho click nữa có nghĩa là gán giá trị cho soLuong là 1
         alert("Số lượng tối thiểu phải là 1!!");
-        return;
+        return; // không trả về cái gì hết
       }
 
       // Tìm ra product trong giỏ hàng thứ index

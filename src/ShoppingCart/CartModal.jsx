@@ -106,7 +106,7 @@ export default class CartModal extends Component {
                   <tbody>{this.renderCart()}</tbody>
                   <tfoot>
                     <tr>
-                      <td colSpan="4"></td>
+                      <td colSpan="5"></td>
                       <td>Tổng tiền: </td>
                       {/* Viết phương thức tính tổng tiền */}
                       <td>{this.tinhTongTien()}</td>
