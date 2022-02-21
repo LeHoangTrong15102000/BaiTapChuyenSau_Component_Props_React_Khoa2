@@ -17,3 +17,5 @@
 // Hướng dẫn việc setState của Redux store thông qua việc thay đổi giao diện giỏ hàng
 // Lấy sản phẩm push vào cái mảng là giỏ hàng được render ra giao diện giỏ hàng , hoặc là nhấn nút tăng số lượng để tăng số lượng sản phẩm lên
 // Hồi nảy mình lấy từ ReduxStore về thì thông qua mapStateToProps, còn bây giờ mình gửi dữ liệu lên ReduxStore thì dừng phương thức là mapDispatchToProps để đưa dữ liệu đó đi
+
+// Đáng có 2 nguồn dữ liệu là BaiTapGioHang và GioHang theo dõi sự thay đổi dữ liệu trên store

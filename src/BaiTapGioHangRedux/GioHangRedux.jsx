@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // Sử dụng thư viện connect để lấy dữ liệu từ store về
 // Nơi nào mà lấy dữ liệu từ store về thì mình phải bỏ 2 từ "Export default của component"
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 class GioHangRedux extends Component {
   // Hàm render giỏ hàng
@@ -14,7 +14,7 @@ class GioHangRedux extends Component {
           <td>{item.maSP}</td>
           <td>
             <img
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               src={item.hinhAnh}
               alt={item.hinhAnh}
             />
@@ -41,6 +41,8 @@ class GioHangRedux extends Component {
     });
   };
 
+  // Xây dựng nút xử lý cộng trừ trong giao diện
+
   // Hàm tính tổng tiền
   tinhTongTien = () => {
     // Phương thức này cũng sẽ viết trong Redux của giỏ hàng
@@ -66,7 +68,7 @@ class GioHangRedux extends Component {
           aria-hidden="true"
         >
           <div
-            style={{ minWidth: "1000px" }}
+            style={{ minWidth: '1000px' }}
             className="modal-dialog"
             role="document"
           >
