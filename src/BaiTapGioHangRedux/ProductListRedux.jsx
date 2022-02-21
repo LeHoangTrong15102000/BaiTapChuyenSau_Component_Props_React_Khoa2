@@ -50,7 +50,7 @@ export default class ProductListRedux extends Component {
           style={{ width: "350px" }}
         >
           {/* Nếu gọi cái hàm ở đây thì chưa làm là nó đã chạy rồi xemChiTiet={this.xemChiTiet()} => Nếu như vậy thì chưa gọi là nó đã chạy */}
-          <ProductItemRedux addCart={this.props.addCart} sanPhamProps={item} />
+          <ProductItemRedux sanPhamProps={item} />
         </div>
       );
     });

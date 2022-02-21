@@ -135,6 +135,7 @@ const mapStateToProps = (state) => {
   // Hàm này sẽ return về props mới cho ứng dụng của chúng ta
   return {
     // Tên props mới thì tự chúng ta đặt ra
+    // Thằng này là từ state tạo ra props
     gioHang: state.stateGioHang.gioHang, // và lấy ra thuộc tính giỏ hàng của state
   };
 };
