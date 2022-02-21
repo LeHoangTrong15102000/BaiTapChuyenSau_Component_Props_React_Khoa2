@@ -7,15 +7,21 @@ import dataJson from './Data/data.json';
 import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
 import CarStore from './CarStore/CarStore';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
+import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux';
 
 
 function App() {
   return (
 
-    // ********************* Bài tập giỏ hàng trong React
-    <div className="container0-fluid">
-      <ShoppingCart />
+    // ********************* Bài tập giỏ hàng trong react sử dụng Redux\
+    <div>
+      <BaiTapGioHangRedux />
     </div>
+
+    // ********************* Bài tập giỏ hàng trong React
+    // <div className="container-fluid">
+    //   <ShoppingCart />
+    // </div>
 
     // **************  Bài tập truyền children giữa các component
     // <div className="container-fluid">
