@@ -28,7 +28,7 @@ const stateGioHang = {
 const BaiTapGioHangReducer = (state = stateGioHang, action) => {
   // eslint-disable-next-line default-case
   switch (action.type) {
-    case 'THEM_GIO_HANG': {
+    case "THEM_GIO_HANG": {
       // xử lý code trong đây
       // Kiểm tra trong giỏ hàng có sản phẩm đó chưa, nếu chưa có thì push nó vào
       let index = state.gioHang.findIndex(
@@ -44,14 +44,38 @@ const BaiTapGioHangReducer = (state = stateGioHang, action) => {
 
       // Sau đó setState lại giao diện
       // Thì trong thằng redux state mới  thì nó mới trả ra giao diện, state cũ thì nó không trả ra giao diện => nên do đó chúng ta dùng spread để sao chép thành một cái state mới
+      // Cập nhật lại state.gioHang
       state.gioHang = [...state.gioHang];
 
       // Trả về state mới
       return { ...state };
     }
+
+    // Thực hiện chức năng là xóa giỏ hàng
+    // Khi xóa thì nó cũng cập nhật lại số lượng sản phẩm đang có trên shopping cart
+    case "XOA_GIO_HANG": {
+      // Do redux luôn có tính bất biến nên mình sẽ tạo ra một biến tạm
+      let gioHangCapNhat = [...state.gioHang]; //  Chúng ta sẽ xử lý trên state cập nhật và cập nhật lại gioHang
+
+      // Tìm ra phần tử cần xóa
+      let index = gioHangCapNhat.findIndex(
+        (product) => product.maSP === action.maSP
+      );
+
+      if (index !== -1) {
+        gioHangCapNhat.splice(index, 1);
+      }
+
+      // cập nhật lại giỏ hàng
+      state.gioHang = gioHangCapNhat;
+      // trả về một state mới
+      return { ...state };
+    }
+
+    default :  return { ...state };// Và return lại state
+
   }
-  // Và return lại state
-  return { ...state };
+  
 };
 
 // Và cái state này muốn liên kết với store của Redux thì chúng ta phải export nó ra

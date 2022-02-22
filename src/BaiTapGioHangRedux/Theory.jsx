@@ -19,3 +19,13 @@
 // Hồi nảy mình lấy từ ReduxStore về thì thông qua mapStateToProps, còn bây giờ mình gửi dữ liệu lên ReduxStore thì dừng phương thức là mapDispatchToProps để đưa dữ liệu đó đi
 
 // Đáng có 2 nguồn dữ liệu là BaiTapGioHang và GioHang theo dõi sự thay đổi dữ liệu trên store
+// Thì khi nguồn dữ liệu trên store thay đổi thì tất cả giao diện của 2 thằng component kết nối với store sẽ được render lại
+
+
+// ********************************************
+// Tai giỏ hàng muốn thay đổi giá trị của số lượng thì chúng ta sẽ gửi giá trị lên store để nó gửi về các component có kết nối với store render ra lại giao diện
+// Component GioHangRedux nó đặc biệt chỗ là vừa lấy dữ liệu từ redux về vừa thay đổi giá trị của redux.
+// Thì nó sẽ quét cây rootReducer coi cái này nó chứa cái type đó thì nó se dừng lại và xử lý
+// Redux có một cái nhược điểm là nó quản lí state tập trung cho nên mỗi lần dispatch lên nó sẽ quét qua tất cả các state luôn vì vậy nó sẽ tốn cái hiệu năng
+
+//  Khi mà gửi dữ liệu xóa lên store thì các thằng như số lượng cart của bài tập giỏ hàng và modalCart render ra giao diện của sản phẩm cũng thay đổi theo => khi mà click nút xóa

@@ -32,7 +32,7 @@ class GioHangRedux extends Component {
           <td>{item.giaBan.toLocaleString()}</td>
           <td>{(item.soLuong * item.giaBan).toLocaleString()}</td>
           <td>
-            <button onClick={() => {}} className="btn btn-danger">
+            <button onClick={() => {this.props.xoaGioHang(item.maSP)}} className="btn btn-danger">
               Xóa
             </button>
           </td>
@@ -142,4 +142,28 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(GioHangRedux); // Bên trong dấu ngoặc thứ nhất chúng ta sẽ truyền vào một cái hàm, nó sẽ biến cái hàm đó thành props của component
+// Hàm đưa dữ liệu lên reducer
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // Tạo ra props là một function xóa giỏ hàng
+    xoaGioHang: (maSP) => {
+      // Đưa dữ liệu đi thì phải tạo ra action
+      let action = {
+        type: 'XOA_GIO_HANG',
+        // và cái thứ 2 là cái giá trị mà mình muốn gửi đi
+        maSP
+      }
+
+      // console log ra thử
+      // console.log(maSP)
+
+      // Dùng phương thức dispatch redux cung cấp đưa dữ liệu lên reducer
+      dispatch(action)
+      
+    }
+  }
+  // Để mà đưa giỏ hàng đi được thì chúng ta phải kết nối với connect
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(GioHangRedux); // Bên trong dấu ngoặc thứ nhất chúng ta sẽ truyền vào một cái hàm, nó sẽ biến cái hàm đó thành props của component
