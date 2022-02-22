@@ -29,3 +29,8 @@
 // Redux có một cái nhược điểm là nó quản lí state tập trung cho nên mỗi lần dispatch lên nó sẽ quét qua tất cả các state luôn vì vậy nó sẽ tốn cái hiệu năng
 
 //  Khi mà gửi dữ liệu xóa lên store thì các thằng như số lượng cart của bài tập giỏ hàng và modalCart render ra giao diện của sản phẩm cũng thay đổi theo => khi mà click nút xóa
+// Redux ra đời giảm bớt sự phụ thuộc của các component lận nhau
+
+// Tóm lại thì những component nào theo dỗi nguồn dữ liệu thì nó sẽ tự động binding lại, render lại giao diện
+// Tuy nhiên hiệu năng của Redux nó sẽ có một số nhược điểm, tuy nhiên nhược điểm không quá lớn
+// COmponent khác viết dữ liệu chưa có thì trúng ta phải viết hàm connect

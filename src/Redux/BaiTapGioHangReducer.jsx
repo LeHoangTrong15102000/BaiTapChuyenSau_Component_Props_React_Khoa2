@@ -72,10 +72,37 @@ const BaiTapGioHangReducer = (state = stateGioHang, action) => {
       return { ...state };
     }
 
-    default :  return { ...state };// Và return lại state
+    case "TANG_GIAM_SO_LUONG": {
+      // Vì Redux có tính bất biến
+      let gioHangCapNhat = [...state.gioHang];
 
+      // Xử lý tăng giảm trên giỏ hàng cập nhật
+      let index = gioHangCapNhat.findIndex(
+        (product) => product.maSP === action.maSP
+      );
+ 
+      if (index !== -1) {
+        if (action.tangGiam) {
+          gioHangCapNhat[index].soLuong += 1;
+        } else {
+          if (gioHangCapNhat[index].soLuong > 1) {
+            gioHangCapNhat[index].soLuong -= 1;
+          } else {
+            alert("Sản phẩm phải tối thiểu bằng 1!")
+          }
+          
+        }
+      } 
+
+      // cập nhật lại giỏ hàng
+      state.gioHang = gioHangCapNhat;
+      // trả về một state mới
+      return { ...state };
+    }
+
+    default:
+      return { ...state }; // Và return lại state
   }
-  
 };
 
 // Và cái state này muốn liên kết với store của Redux thì chúng ta phải export nó ra
