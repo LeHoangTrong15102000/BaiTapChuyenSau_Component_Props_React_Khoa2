@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class CartModal extends Component {
   renderCart = () => {
+    // Truyền giỏ hàng vào trong component card
     let { gioHang } = this.props;
 
     return gioHang.map((item, index) => {
@@ -48,7 +49,7 @@ export default class CartModal extends Component {
       return total += item.donGia * item.soLuong;
     },0).toLocaleString();
 
-  }
+  } 
 
   render() {
     // let { content } = this.props;

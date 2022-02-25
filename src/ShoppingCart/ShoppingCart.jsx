@@ -157,6 +157,7 @@ export default class ShoppingCart extends Component {
           </span>
         </div>
         {/* Truyền dữ liệu tĩnh cho giỏ hàng */}
+        {/* Truyền giỏ hàng vào trong component card */}
         <CartModal
           gioHang={this.state.shoppingCart}
           deleteProduct={this.deleteProduct}
