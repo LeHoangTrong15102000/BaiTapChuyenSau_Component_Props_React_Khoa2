@@ -8,15 +8,19 @@ import DanhSachSanPham from './ProductPhone/DanhSachSanPham';
 import CarStore from './CarStore/CarStore';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux';
-
+import BaiTapLacXiNgau from './BaiTapLacXiNgau/BaiTapLacXiNgau';
 
 function App() {
   return (
+    // *********************  Bài tập Redux lắc xí ngầu
+    <div>
+      <BaiTapLacXiNgau />
+    </div>
 
     // ********************* Bài tập giỏ hàng trong react sử dụng Redux\
-    <div>
-      <BaiTapGioHangRedux />
-    </div>
+    // <div>
+    //   <BaiTapGioHangRedux />
+    // </div>
 
     // ********************* Bài tập giỏ hàng trong React
     // <div className="container-fluid">
@@ -32,8 +36,6 @@ function App() {
     // <div className='container-fluid'>
     //   <CarStore />
     // </div>
-
-
 
     //******** bài tập Phone Product
     // <div className="container-fluid">
