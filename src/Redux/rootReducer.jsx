@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import BaiTapGioHangReducer from './BaiTapGioHangReducer';
+import BaiTapXucXacReducer from './BaiTapXucXacReducer';
 
 const rootReducer = combineReducers({
   // Đây là store tổng của ứng dụng của chúng ta
   // Thì cái Store tổng ứng dụng cũng sẽ chứa nhiều cái state
-  stateGioHang: BaiTapGioHangReducer, // state giỏ hàng, chỗ này dùng ES6 chép lại nội dung state của Reducer mà không đổi tên
+  stateGioHang: BaiTapGioHangReducer, // state giỏ hàng, chỗ này dùng ES6 chép lại nội dung state của Reducer mà không đổi tên\
+
+  BaiTapXucXacReducer // Viết theo kiểu ES6 luôn, State của bài Tập Game
 });
 
 export default rootReducer;
