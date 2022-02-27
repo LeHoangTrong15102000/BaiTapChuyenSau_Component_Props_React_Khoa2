@@ -9,13 +9,20 @@ import CarStore from './CarStore/CarStore';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux';
 import BaiTapLacXiNgau from './BaiTapLacXiNgau/BaiTapLacXiNgau';
+import BaiTapOanTuXi from './BaiTapOanTuXi/BaiTapOanTuXi';
 
 function App() {
   return (
-    // *********************  Bài tập Redux lắc xí ngầu
+
+    // ********************* Bài tập redux oẳn tù xì 
     <div>
-      <BaiTapLacXiNgau />
+      <BaiTapOanTuXi />
     </div>
+
+    // *********************  Bài tập Redux lắc xí ngầu
+    // <div>
+    //   <BaiTapLacXiNgau />
+    // </div>
 
     // ********************* Bài tập giỏ hàng trong react sử dụng Redux\
     // <div>
