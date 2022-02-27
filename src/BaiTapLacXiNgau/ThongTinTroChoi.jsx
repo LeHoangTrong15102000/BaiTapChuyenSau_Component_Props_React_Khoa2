@@ -29,6 +29,8 @@ class ThongTinTroChoi extends Component {
 // Viết hàm lấy dữ liệu từ store về
 const mapStateToProps = (state) => {
   return {
+
+    // Lấy dữ liệu thay đổi từ Redux store về và render ra lại giao diện
     taiXiu: state.BaiTapXucXacReducer.taiXiu,
     soBanThang: state.BaiTapXucXacReducer.soBanThang,
     tongSoLanChoi: state.BaiTapXucXacReducer.tongSoLanChoi,
