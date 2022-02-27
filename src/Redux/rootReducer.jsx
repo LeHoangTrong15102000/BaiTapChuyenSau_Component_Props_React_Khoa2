@@ -7,7 +7,7 @@ const rootReducer = combineReducers({
   // Thì cái Store tổng ứng dụng cũng sẽ chứa nhiều cái state
   stateGioHang: BaiTapGioHangReducer, // state giỏ hàng, chỗ này dùng ES6 chép lại nội dung state của Reducer mà không đổi tên\
 
-  BaiTapXucXacReducer // Viết theo kiểu ES6 luôn, State của bài Tập Game
+  BaiTapXucXacReducer, // Viết theo kiểu ES6 luôn, State của bài Tập Game, kết nối với phương thức này của stores.
 });
 
 export default rootReducer;

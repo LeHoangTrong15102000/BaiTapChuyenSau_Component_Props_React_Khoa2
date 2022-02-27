@@ -21,18 +21,34 @@ class GioHangRedux extends Component {
           </td>
           <td>{item.tenSP}</td>
           <td>
-            <button style={{width: '37px'}} onClick={() => {this.props.tangGiamSoLuong(item.maSP,false)}} className="btn btn-primary mr-2">
+            <button
+              style={{ width: '37px' }}
+              onClick={() => {
+                this.props.tangGiamSoLuong(item.maSP, false);
+              }}
+              className="btn btn-primary mr-2"
+            >
               -
             </button>
             {item.soLuong}
-            <button onClick={() => {this.props.tangGiamSoLuong(item.maSP,true)}} className="btn btn-primary ml-2">
+            <button
+              onClick={() => {
+                this.props.tangGiamSoLuong(item.maSP, true);
+              }}
+              className="btn btn-primary ml-2"
+            >
               +
             </button>
           </td>
           <td>{item.giaBan.toLocaleString()}</td>
           <td>{(item.soLuong * item.giaBan).toLocaleString()}</td>
           <td>
-            <button onClick={() => {this.props.xoaGioHang(item.maSP)}} className="btn btn-danger">
+            <button
+              onClick={() => {
+                this.props.xoaGioHang(item.maSP);
+              }}
+              className="btn btn-danger"
+            >
               Xóa
             </button>
           </td>
@@ -41,13 +57,14 @@ class GioHangRedux extends Component {
     });
   };
 
-  
   // Hàm tính tổng tiền
   tinhTongTien = () => {
     // Phương thức này cũng sẽ viết trong Redux của giỏ hàng
-    return this.props.gioHang.reduce((total, item, index) => {
-      return total += (item.soLuong * item.giaBan)
-    },0).toLocaleString()
+    return this.props.gioHang
+      .reduce((total, item, index) => {
+        return (total += item.soLuong * item.giaBan);
+      }, 0)
+      .toLocaleString();
   };
 
   render() {
@@ -154,39 +171,32 @@ const mapDispatchToProps = (dispatch) => {
       let action = {
         type: 'XOA_GIO_HANG',
         // và cái thứ 2 là cái giá trị mà mình muốn gửi đi
-        maSP
-      }
+        maSP,
+      };
 
       // console log ra thử
       // console.log(maSP)
 
       // Dùng phương thức dispatch redux cung cấp đưa dữ liệu lên reducer
-      dispatch(action)
-      
+      dispatch(action);
     },
 
     // Viết một hàm tăng giảm số lượng
     tangGiamSoLuong: (maSP, tangGiam) => {
       // true thì sẽ xử lý tăng, false thì sẽ xử lý giảm
 
-
       // Tạo ra action để đưa lên reducer của Redux
       let action = {
-        type: 'TANG_GIAM_SO_LUONG',// Thuộc tính bắt buộc
-        maSP,// Object literal nên chỉ cần ghi maSP nó sẽ hiểu là maSP: maSP 
-        tangGiam
-      }
-      
+        type: 'TANG_GIAM_SO_LUONG', // Thuộc tính bắt buộc
+        maSP, // Object literal nên chỉ cần ghi maSP nó sẽ hiểu là maSP: maSP
+        tangGiam,
+      };
 
       // Đưa action lên reducer mỗi lần người dùng click vào
-      dispatch(action)
-
+      dispatch(action);
     },
-
-    
-  }
+  };
   // Để mà đưa giỏ hàng đi được thì chúng ta phải kết nối với connect
-}
-
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(GioHangRedux); // Bên trong dấu ngoặc thứ nhất chúng ta sẽ truyền vào một cái hàm, nó sẽ biến cái hàm đó thành props của component

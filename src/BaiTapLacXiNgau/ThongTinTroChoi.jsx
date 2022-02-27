@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 class ThongTinTroChoi extends Component {
+  // Tại component này thì chúng ta kết nối với store của Redux
   render() {
     return (
       <div>
         <div className="display-4">
-          BẠN CHỌN: <span className="text-danger">TÀI</span>
+          BẠN CHỌN:{' '}
+          <span className="text-danger">
+            {this.props.taiXiu ? 'TÀI' : 'XỈU'}
+          </span>
         </div>
 
         <div className="display-4">
-          SỐ BÀN THẮNG: <span className="text-success">1</span>
+          SỐ BÀN THẮNG:
+          <span className="text-success ml-2">{this.props.soBanThang}</span>
         </div>
 
         <div className="display-4">
-          TỔNG SỐ BÀN CHƠI: <span className="text-info">3</span>
+          TỔNG SỐ BÀN CHƠI:
+          <span className="text-info ml-2">{this.props.tongSoLanChoi}</span>
         </div>
       </div>
     );
   }
 }
 
-export default ThongTinTroChoi;
+// Viết hàm lấy dữ liệu từ store về
+const mapStateToProps = (state) => {
+  return {
+    taiXiu: state.BaiTapXucXacReducer.taiXiu,
+    soBanThang: state.BaiTapXucXacReducer.soBanThang,
+    tongSoLanChoi: state.BaiTapXucXacReducer.tongSoLanChoi,
+  };
+};
+
+export default connect(mapStateToProps)(ThongTinTroChoi);
