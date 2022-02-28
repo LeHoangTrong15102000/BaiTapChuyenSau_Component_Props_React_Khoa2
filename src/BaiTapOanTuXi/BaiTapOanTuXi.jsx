@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import './BaiTapOanTuXi.css'
-import Computer from './Computer'
-import Player from './Player'
-import ThongTinTroChoi from './ThongTinTroChoi'
+import React, { Component } from 'react';
+import './BaiTapOanTuXi.css';
+import Computer from './Computer';
+import Player from './Player';
+import ThongTinTroChoi from './ThongTinTroChoi';
 
 export default class BaiTapOanTuXi extends Component {
   render() {
@@ -14,12 +14,12 @@ export default class BaiTapOanTuXi extends Component {
             <Player />
           </div>
 
-
           <div className="col-4">
             <ThongTinTroChoi />
-            <button>Play game</button>
+            <button className="btn btn-success p-2 mt-5 display-4">
+              Play game
+            </button>
           </div>
-
 
           <div className="col-4">
             {/* Cũng sẽ tách nó ra thành một component */}
@@ -27,6 +27,6 @@ export default class BaiTapOanTuXi extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
