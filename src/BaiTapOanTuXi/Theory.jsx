@@ -11,3 +11,10 @@
 // State
 
 // Sẽ lưu tất cả các thứ thay đổi vào trong Redux -> để khi click nút sẽ render ra lại giao diện của chúng ta.
+// Những thằng nào thay đổi thì mình sẽ lưu l-ại trong cái state hết để khi mà cập nhật thì những thằng theo dõi cái Store Redux sẽ tự động render lại giao diện
+// Ban đầu là mình truyền tĩnh cho thuộc tính hình ảnh
+// Tiếp theo chúng ta sẽ binding kết quả trò chơi
+
+// ***********************************
+// Xử lý tiếp theo là ng ười dùng nhấn play game thì sẽ random cái kéo búa bao bên máy
+// Tạo một cái Keyframe
