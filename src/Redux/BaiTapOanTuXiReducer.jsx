@@ -13,8 +13,8 @@ const stateDefault = {
   // Số bàn thắng
   soBanThang: 0,
 
-  // Số bàn thua
-  soBanThua: 1,
+  // Số bàn chơi
+  tongSoBanChoi: 0,
 
   // Đến lưu trữ dữ liệu của thằng máy
   // Do máy không cần đặt cược nên chúng ta ko cần phải để thuộc tính ddatCuoc vào
@@ -85,6 +85,63 @@ const BaiTapOanTuXiReducer = (state = stateDefault, action) => {
       return {...state};
     }
 
+    case 'END_GAME' : {
+      // Thì nó sẽ lấy mảng cược có giá trị là true nó so sánh với giá trị mảng của computer.
+
+      // lấy ra giá trị của thằng player có giá trị datCuoc là true
+      let player = state.mangDatCuoc.find(item => item.datCuoc === true);
+      // lấy  ra giá trị của thằng computer
+      let computer = state.computer;
+      
+      // Dùng switch để so sanh giữa 2 giá trị là player và computer
+      switch (player.ma) {
+        // eslint-disable-next-line no-lone-blocks
+        case 'keo': {
+          if (computer.ma === 'keo') {
+            state.resultGame = 'Bạn hòa rồi!!!';
+          } else if (computer.ma === 'bua') {
+            state.resultGame = 'Haha bạn thua sml rồi !!!';
+          } else {
+            state.resultGame = "I'm iron man, i love you 3000!!";
+            state.soBanThang += 1;
+          }
+        };break;
+
+        // eslint-disable-next-line no-lone-blocks
+        case 'bua' : {
+          if (computer.ma === 'keo') {
+            state.resultGame = "I'm iron man, i love you 3000!!";
+            state.soBanThang += 1;
+          } else if (computer.ma === 'bua') {
+            state.resultGame = 'Bạn hòa rồi!!!';
+          } else {
+            state.resultGame = "Haha bạn thua sml rồi !!!";
+          }
+        };break;
+
+        // eslint-disable-next-line no-lone-blocks
+        case 'bao' : {
+          if (computer.ma === 'keo') {
+            state.resultGame = "Haha bạn thua sml rồi !!!";
+          } else if (computer.ma === 'bua') {
+            state.resultGame = "I'm iron man, i love you 3000!!";
+            state.soBanThang += 1;
+          } else {
+            state.resultGame = "Bạn hòa rồi!!!";
+          }
+        };break;
+
+        // Mỗi lần chạy thì tăng số bàn chơi lên 1\
+        
+        default : state.resultGame = "I'm iron man, i love you 3000!!!";
+        return {...state}
+      }
+      
+    }
+
+    state.tongSoBanChoi += 1;
+    // Cuối cùng thì return lại state 
+    return {...state}
     // Mặc định thì nó sẽ return lại state
     default:
       return { ...state };

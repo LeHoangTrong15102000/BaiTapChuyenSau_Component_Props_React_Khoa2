@@ -11,8 +11,8 @@ class ThongTinTroChoi extends Component {
           <span className="text-warning ml-2">{this.props.soBanThang}</span>
         </div>
         <div style={{ fontSize: '40px' }} className="text-secondary">
-          Số bàn thua:
-          <span className="text-info ml-2">{this.props.soBanThua}</span>
+          Tổng số bàn chơi:
+          <span className="text-info ml-2">{this.props.tongSoBanChoi}</span>
         </div>
       </div>
     );
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
   return {
     resultGame: state.BaiTapOanTuXiReducer.resultGame,
     soBanThang: state.BaiTapOanTuXiReducer.soBanThang,
-    soBanThua: state.BaiTapOanTuXiReducer.soBanThua,
+    tongSoBanChoi: state.BaiTapOanTuXiReducer.tongSoBanChoi,
   }
 }
 

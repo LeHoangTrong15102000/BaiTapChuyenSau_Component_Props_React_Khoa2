@@ -18,3 +18,6 @@
 // ***********************************
 // Xử lý tiếp theo là ng ười dùng nhấn play game thì sẽ random cái kéo búa bao bên máy
 // Tạo một cái Keyframe
+
+// Sau khi thực hiện hàm setInterval rồi thì chúng ta thực hiện một action nữa -> có nghĩa là sau khi thằng này nó dispatch rồi thì chúng ta sẽ thực hiện một dispatch cuối cùng là
+
