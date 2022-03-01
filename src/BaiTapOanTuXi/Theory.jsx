@@ -21,3 +21,4 @@
 
 // Sau khi thực hiện hàm setInterval rồi thì chúng ta thực hiện một action nữa -> có nghĩa là sau khi thằng này nó dispatch rồi thì chúng ta sẽ thực hiện một dispatch cuối cùng là
 
+// Mấy cái nào thuộc dữ liệu cơ sỡ ko cần phải clone , gán cái object ra hết, có thể gán trực tiếp cho nó luôn
