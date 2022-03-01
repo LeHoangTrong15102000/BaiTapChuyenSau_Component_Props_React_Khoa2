@@ -10,14 +10,21 @@ import ShoppingCart from './ShoppingCart/ShoppingCart';
 import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux';
 import BaiTapLacXiNgau from './BaiTapLacXiNgau/BaiTapLacXiNgau';
 import BaiTapOanTuXi from './BaiTapOanTuXi/BaiTapOanTuXi';
+import BaiTapBookingTicket from './CyberMovie/BaiTapBookingTicket';
 
 function App() {
   return (
 
-    // ********************* Bài tập redux oẳn tù xì 
+
+    // ********************* Bài tập về Cyber Movie để ôn luyện Redux
     <div>
-      <BaiTapOanTuXi />
+      <BaiTapBookingTicket />
     </div>
+
+    // ********************* Bài tập redux oẳn tù xì 
+    // <div>
+    //   <BaiTapOanTuXi />
+    // </div>
 
     // *********************  Bài tập Redux lắc xí ngầu
     // <div>
