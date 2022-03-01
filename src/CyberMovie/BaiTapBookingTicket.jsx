@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import './BaiTapBookingTicket.css';
 import ThongTinDatGhe from './ThongTinDatGhe';
+import danhSachGheData from '../Data/danhSachGhe.json'
+import HangGhe from './HangGhe'
 import { connect } from 'react-redux';
 
 export default class BaiTapBookingTicket extends Component {
+
+
+  // Render ra hàng ghế
+  renderHangGhe = () => {
+      return danhSachGheData.map((hangGhe, index) => {
+        return <div key={index}>
+          <HangGhe hangGhe={hangGhe} soHangGhe={index}/>
+        </div>
+      })
+  }
+
+  // Render ra được cái màn hình chứa các số ghế
+
+
   render() {
     // Cho backGroundSize: 100% thì ảnh nó sẽ full cái màn hình
-    // Mặc định row sẽ sin ra cái roll ngang cho chúng ta, row mà không đẻ trong container thì nó sẽ sinh ra cái roll ngang.
-
+    // Mặc định row sẽ sin ra cái roll ngang cho chúng ta, row mà không để trong container thì nó sẽ sinh ra cái roll ngang.
     return (
       <div
         className="bookingMovie"
@@ -34,11 +49,13 @@ export default class BaiTapBookingTicket extends Component {
                   ĐẶT VÉ XEM PHIM CYBERLEARN.VN
                 </div>
                 {/* Màn hình -> Muốn nó nhảy vào giữa thì cho nó cái div bọc bên ngoài thì nó sẽ full cây col-8 */}
-                <div className="mt-1 d-flex flex-column justify-content-center align-items-center">
+                <div className="mt-1 ml-5 d-flex flex-column justify-content-center">
                   <div className="text-light" style={{ fontSize: '20px' }}>
                     Màn hình
                   </div>
-                  <div className="screen"></div>
+                  <div className="screen" style={{marginLeft: 80}}></div>
+                  {/* Đặt bootstrap của hàng ghế tại đây Render theo từng hàng */}
+                  {this.renderHangGhe()}
                 </div>
               </div>
 

@@ -36,6 +36,8 @@ export default class ThongTinDatGhe extends Component {
             <tbody>
               <tr className="text-light">
                 <td>12A</td>
+                <td className="text-warning">75000</td>
+                <td>X</td>
               </tr>
             </tbody>
           </table>

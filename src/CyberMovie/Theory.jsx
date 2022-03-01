@@ -14,3 +14,5 @@
 // Có 2 component con chinh là danh sách các hàng ghế, thông tin về các hàng ghế đã chọn.
 // Những thông tin về đặt ghế sẽ tách nó ra thành một component riêng
 // Ở bài sau sẽ binding ra các cái ghế ở các cái hàng -> chỗ này bắt đầu phức tạp rồi
+
+// Danh sách ghế sao này sẽ ứng với API mà Backend trả về cho mình
