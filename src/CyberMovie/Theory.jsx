@@ -12,3 +12,5 @@
 // Ở bài học ngày hôm nay sẽ học cách viết Redux một cách chuẩn hóa hơn -> Đây là cách mà các công ty bên ngoài người ta thường hay viết
 // Ở bài này sẽ khai báo các action bằng cách sử dụng action creator.
 // Có 2 component con chinh là danh sách các hàng ghế, thông tin về các hàng ghế đã chọn.
+// Những thông tin về đặt ghế sẽ tách nó ra thành một component riêng
+// Ở bài sau sẽ binding ra các cái ghế ở các cái hàng -> chỗ này bắt đầu phức tạp rồi

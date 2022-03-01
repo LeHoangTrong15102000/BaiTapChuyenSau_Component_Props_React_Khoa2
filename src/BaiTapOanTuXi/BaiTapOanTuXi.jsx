@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "./BaiTapOanTuXi.css";
-import Computer from "./Computer";
-import Player from "./Player";
-import ThongTinTroChoi from "./ThongTinTroChoi";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import './BaiTapOanTuXi.css';
+import Computer from './Computer';
+import Player from './Player';
+import ThongTinTroChoi from './ThongTinTroChoi';
+import { connect } from 'react-redux';
 
 class BaiTapOanTuXi extends Component {
   render() {
@@ -45,7 +45,7 @@ const mapDispatchToProps = (dispatch) => {
       // Khai báo hàm lặp đi lặp lại
       let randomComputerItem = setInterval(() => {
         dispatch({
-          type: "PLAY_GAME_OANTUXI",
+          type: 'PLAY_GAME_OANTUXI',
         });
         // Mỗi 100ms thì nó sẽ thực hiện 1 lần
 
@@ -57,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
 
           // Sau khi đã setInterval rồi sẽ thực hiện một action cuối cùng đó là hàm xử lý so sanh 2 giá trị
           dispatch({
-            type: "END_GAME",
+            type: 'END_GAME',
           });
         }
 
