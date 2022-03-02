@@ -16,3 +16,15 @@
 // Ở bài sau sẽ binding ra các cái ghế ở các cái hàng -> chỗ này bắt đầu phức tạp rồi
 
 // Danh sách ghế sao này sẽ ứng với API mà Backend trả về cho mình
+// Bước 2 là xác định trạng thái thay đổi để lưu trữ trong Redux.
+/**
+ * cách thứ 1 là lưu trữ nó trong state của Redux
+ * Cách thứ 2 là tạo ra một cái mảng giống như cái giỏ hàng để chứa các ghế mà người ta đã đặt -> chọn cách 2 để đỡ phải chỉnh sửa về mặt giao diện
+ */
+
+// Ở hàng ghế mỗi lần mình click vào thì mình sẽ binding ra lại cái mảng đó, push vòa mảng danhsachgheDangDat, click lần thứ 2 nếu mà nó đã có trong mangGhe thì remove nó khỏi cái mảng đó, so sánh nếu như cái ghế có trong mảng thì hiển thị màu xanh còn nếu không có thì hiện thị màu mặc định.
+
+/**
+ * Vậy làm sao mỗi lần click thì nó sẽ đưa cái ghế đó vào mảng
+ * Rồi bây giờ chỗ nào mình đặt thì nó sẽ hiện ra danh sách ghế.
+ */

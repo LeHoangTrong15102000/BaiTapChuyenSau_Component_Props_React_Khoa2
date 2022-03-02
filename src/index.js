@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 //set up redux, Provider là một cái thẻ do react-redux cung cấp cho mình
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './Redux/rootReducer';
+import rootReducer from './Redux/Reducer/rootReducer';
 
 const store = createStore(
   rootReducer

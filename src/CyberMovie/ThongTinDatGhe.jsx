@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-export default class ThongTinDatGhe extends Component {
+class ThongTinDatGhe extends Component {
   render() {
     return (
       <div>
@@ -46,3 +46,7 @@ export default class ThongTinDatGhe extends Component {
     );
   }
 }
+
+const mapStateToProps = () => {};
+
+export default connect(mapStateToProps)(ThongTinDatGhe);
