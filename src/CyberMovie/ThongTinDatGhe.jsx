@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { HUY_GHE } from '../Redux/types/BaiTapDatGheType';
+import { huyGheAction } from '../Redux/actions/BaiTapDatVeAction';
 class ThongTinDatGhe extends Component {
   render() {
     return (
@@ -33,13 +35,43 @@ class ThongTinDatGhe extends Component {
               </tr>
             </thead>
             {/* tbody chúng ta sẽ binding vào, lấy dữ liệu từ store trả về */}
-            <tbody>
-              <tr className="text-light">
-                <td>12A</td>
-                <td className="text-warning">75000</td>
-                <td>X</td>
-              </tr>
+            <tbody className="text-warning">
+              {/* Lặp qua để binding ra dữ liệu */}
+              {this.props.danhSachGheDangDat.map((gheDangDat, index) => {
+                return (
+                  <tr className="" key={index}>
+                    <td>{gheDangDat.soGhe}</td>
+                    <td>{gheDangDat.gia.toLocaleString()}</td>
+                    <td>
+                      <button
+                        onClick={() => {
+                          // Khi mà connect với Redux thì mặc định mỗi thz component nó sẽ có một pthuc la dispatch
+                          this.props.dispatch(huyGheAction(gheDangDat.soGhe));
+                        }}
+                        className="btn btn-danger"
+                      >
+                        HỦY
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
+            {/* In ra giá tiền */}
+            <tfoot className="text-info">
+              <tr>
+                <td></td>
+                <td>Thành tiền: </td>
+                <td>
+                  {/* viết hàm render ra tổng tiền */}
+                  {this.props.danhSachGheDangDat
+                    .reduce((total, gheDangDat, index) => {
+                      return (total += gheDangDat.gia);
+                    }, 0)
+                    .toLocaleString()}
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -47,6 +79,12 @@ class ThongTinDatGhe extends Component {
   }
 }
 
-const mapStateToProps = () => {};
+const mapStateToProps = (state) => {
+  return {
+    danhSachGheDangDat: state.BaiTapDatVeReducer.danhSachGheDangDat,
+  };
+};
+
+// Cách thứ 2 là có thể viết mapDispatchToProps
 
 export default connect(mapStateToProps)(ThongTinDatGhe);

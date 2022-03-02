@@ -1,3 +1,4 @@
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { DAT_GHE } from '../types/BaiTapDatGheType';
 
 const stateDefault = {
@@ -21,6 +22,26 @@ function BaiTapDatVeReducer(state = stateDefault, action) {
         danhSachGheDangDatUpdate.push(action.ghe);
       }
       // Cập nhật lại danh sách ghế => giao diện render lại
+      state.danhSachGheDangDat = danhSachGheDangDatUpdate;
+
+      return { ...state };
+    }
+
+    // Viết một cái case huy ghế
+    case 'HUY_GHE': {
+      let danhSachGheDangDatUpdate = [...state.danhSachGheDangDat];
+      let index = danhSachGheDangDatUpdate.findIndex(
+        (gheDangDat) => gheDangDat.soGhe === action.soGhe
+      );
+
+      if (index !== -1) {
+        // Nếu mà có rồi thì remove nó khỏi đó đi
+        danhSachGheDangDatUpdate.splice(index, 1);
+      } else {
+        return;
+      }
+
+      // cập nhật lại state danhSachGheDangDat
       state.danhSachGheDangDat = danhSachGheDangDatUpdate;
 
       return { ...state };
