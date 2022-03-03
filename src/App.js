@@ -12,14 +12,20 @@ import BaiTapLacXiNgau from './BaiTapLacXiNgau/BaiTapLacXiNgau';
 import BaiTapOanTuXi from './BaiTapOanTuXi/BaiTapOanTuXi';
 import BaiTapBookingTicket from './CyberMovie/BaiTapBookingTicket';
 import DemoPureComponent from './DemoPureComponent/DemoPureComponent';
+import ContextDemo from './ContextDemo/ContextDemo';
 
 function App() {
   return (
 
-    // ********************
+    // ******************** Context API học để biết
     <div>
-      <DemoPureComponent />
+      <ContextDemo />
     </div>
+
+    // ******************** Pure Component
+    // <div>
+    //   <DemoPureComponent />
+    // </div>
 
     // ********************* Bài tập về Cyber Movie để ôn luyện Redux
     // <div>
