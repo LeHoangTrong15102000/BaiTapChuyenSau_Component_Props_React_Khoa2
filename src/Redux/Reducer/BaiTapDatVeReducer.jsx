@@ -1,5 +1,6 @@
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+// import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { DAT_GHE } from '../types/BaiTapDatGheType';
+import { HUY_GHE } from '../types/BaiTapDatGheType';
 
 const stateDefault = {
   danhSachGheDangDat: [],
@@ -28,7 +29,7 @@ function BaiTapDatVeReducer(state = stateDefault, action) {
     }
 
     // Viết một cái case huy ghế
-    case 'HUY_GHE': {
+    case HUY_GHE: {
       let danhSachGheDangDatUpdate = [...state.danhSachGheDangDat];
       let index = danhSachGheDangDatUpdate.findIndex(
         (gheDangDat) => gheDangDat.soGhe === action.soGhe
