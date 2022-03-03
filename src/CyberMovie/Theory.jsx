@@ -30,4 +30,4 @@
  */
 
 // Bài giảng hôm nay sẽ giới thiệu một kiến thức nâng cao về React đó chính là Pure components
-// Những thành phần nào chứa props và cần setState thì mới cần render lại mà thôi, còn những component nào ko liên quan gì và ko cần render lại trong đây, ko cần setState thì nó không nhất thiêt phải render lại
+// Những thành phần nào chứa props và cần setState thì mới cần render lại mà thôi, còn những component nào ko liên quan gì và ko cần render lại trong đây, ko cần setState thì nó không nhất thiết phải render lại.

@@ -11,15 +11,20 @@ import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux';
 import BaiTapLacXiNgau from './BaiTapLacXiNgau/BaiTapLacXiNgau';
 import BaiTapOanTuXi from './BaiTapOanTuXi/BaiTapOanTuXi';
 import BaiTapBookingTicket from './CyberMovie/BaiTapBookingTicket';
+import DemoPureComponent from './DemoPureComponent/DemoPureComponent';
 
 function App() {
   return (
 
+    // ********************
+    <div>
+      <DemoPureComponent />
+    </div>
 
     // ********************* Bài tập về Cyber Movie để ôn luyện Redux
-    <div>
-      <BaiTapBookingTicket />
-    </div>
+    // <div>
+    //   <BaiTapBookingTicket />
+    // </div>
 
     // ********************* Bài tập redux oẳn tù xì 
     // <div>
