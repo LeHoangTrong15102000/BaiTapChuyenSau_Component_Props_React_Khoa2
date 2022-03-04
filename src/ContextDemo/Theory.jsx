@@ -13,3 +13,8 @@
 // Provider giống như là component được lấy ra từ Context đó
 
 // Redux bây giờ giống như là thằng quản lí mã nguồn mạnh nhất rồi , tùy một vài trường hợp thì thằng Context nó sẽ hơn nhưng đa phần nó phải cần thêm PureComponent để tối ưu nữa.
+
+// Hướng dẫn một số cái tips của Provider là: Vì vậy phải xác định rằng cái phần giao diện của nó cái phần nào cần binding từ cái consumer thì chúng ta mới bọc nó lại, còn không thì không cần bọc lại hết vì nó sẽ render lại hết giao diện
+// Nên hết sức lưu ý khi sử dụng thằng này là dữ liệu nào cần binding lại từ state của Provider -> thì mới bọc Consumer vào nội dung của cái cần binding đó\
+
+// Khóa học tiếp theo sẽ học về Hooks và cách viết hooks như thế nào để mà đi phỏng vấn cho nó chắc chắn.
