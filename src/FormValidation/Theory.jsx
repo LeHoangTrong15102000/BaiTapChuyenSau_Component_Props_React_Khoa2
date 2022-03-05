@@ -20,3 +20,17 @@
  */
 
 // *************************** Bài học tiếp validate cho ô input
+// Kiểm tra nguồn dữ liệu đó xem có hợp lệ hay không
+// Thì kiểm tra nguồn dữ liệu validation cũng là kiểm tra nó có thay đổi hay không -> thì cũng đặt trong state hoặc store của Redux
+// Khi mà đặt thuộc tính lỗi mà đặt khác tên name thì rất là khó để binding được dữ liệu
+
+// Sẽ luôn luôn đặt cái gì đó liên quan đến đúng cái tên thuộc tính "name" của thẻ input được nhập từ người dùng
+// Sau đó sẽ tiến thành binding dữ liệu và những cái lỗi lên thẻ input của chúng ta.
+// Tuy nhiên không phải để dữ liệu tĩnh, mà chúng ta sẽ sett cái lỗi khi mà binding dữ liệu xong 
+// value thì sẽ lấy từ value mỗi khi thay đổi giá trị, errors sẽ lấy từ error mỗi khi bắt được lỗi của cái giá trị của ô input đó
+// Bây giờ mình sẽ tiến thành sett như thế nào để mỗi lần nhập liệu nó sẽ lấy cái value binding lên cái state của mình đồng thời nó cũng kiểm tra cái lỗi của mình  
+
+// Do mình chưa setState lại giá trị của values: nên khi nhập liệu vào thì nó vẫn là rỗng
+// Không khuyến khích gọi 2 hàm setState liên tục với nhau -> chỉ cần gọi 1 hàm setState và viết nhiều phương thức để thực thi đều đó.
+
+// Ở video sau sẽ hướng dẫn cách duyệt submit lại.-> sẽ chặn nút submit khi mà dữ kiện không hợp lệ
