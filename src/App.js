@@ -16,7 +16,6 @@ import ContextDemo from './ContextDemo/ContextDemo';
 
 function App() {
   return (
-
     // ******************** Context API học để biết
     <div>
       <ContextDemo />
@@ -32,7 +31,7 @@ function App() {
     //   <BaiTapBookingTicket />
     // </div>
 
-    // ********************* Bài tập redux oẳn tù xì 
+    // ********************* Bài tập redux oẳn tù xì
     // <div>
     //   <BaiTapOanTuXi />
     // </div>

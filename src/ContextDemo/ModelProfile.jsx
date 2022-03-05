@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { ModelContext } from "./_Context/ModelContext";
+import React, { Component } from 'react';
+import { ModelContext } from './_Context/ModelContext';
 
 export default class ModelProfile extends Component {
   // để Muốn truy xuất dữ liệu trong Context thì sử dụng Consumer
@@ -18,8 +18,10 @@ export default class ModelProfile extends Component {
                   alt="123"
                 />
                 <div className="card-body">
-                  <h4 style={{ color: "pink" }}> Số lượng tim:
-                    {value.stateLike} <i className="fa fa-heart"></i> 
+                  <h4 style={{ color: 'pink' }}>
+                    {' '}
+                    Số lượng tim:
+                    {value.stateLike} <i className="fa fa-heart"></i>
                   </h4>
                   <h4 className="card-title">Tên: Lê Thị A</h4>
                   <p className="card-text">Tuổi: 18</p>

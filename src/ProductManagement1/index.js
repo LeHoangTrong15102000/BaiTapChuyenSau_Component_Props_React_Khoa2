@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import axios from "axios";
-import ProductList from "./ProductList";
-import ProductDetails from "./ProductDetails";
-import ProductForm from "./ProductForm";
+import React, { Component } from 'react';
+import axios from 'axios';
+import ProductList from './ProductList';
+import ProductDetails from './ProductDetails';
+import ProductForm from './ProductForm';
 // import data from "./data.json";
 
 export default class ProductManagement extends Component {
@@ -24,7 +24,7 @@ export default class ProductManagement extends Component {
   getProducts = async () => {
     try {
       const result = await axios.get(
-        "https://6221ffe4666291106a19e141.mockapi.io/api/products"
+        'https://6221ffe4666291106a19e141.mockapi.io/api/products'
       );
       // Nhận được kết quả từ API => gọi setState để set kết quả vào biến products
       this.setState({ products: result.data });
