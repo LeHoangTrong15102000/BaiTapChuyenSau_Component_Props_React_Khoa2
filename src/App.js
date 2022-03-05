@@ -13,13 +13,17 @@ import BaiTapOanTuXi from './BaiTapOanTuXi/BaiTapOanTuXi';
 import BaiTapBookingTicket from './CyberMovie/BaiTapBookingTicket';
 import DemoPureComponent from './DemoPureComponent/DemoPureComponent';
 import ContextDemo from './ContextDemo/ContextDemo';
+import UserProfile from './FormValidation/UserProfie/UserProfile';
 
 function App() {
   return (
-    // ******************** Context API học để biết
     <div>
-      <ContextDemo />
+      <UserProfile />
     </div>
+    // ******************** Context API học để biết
+    // <div>
+    //   <ContextDemo />
+    // </div>
 
     // ******************** Pure Component
     // <div>

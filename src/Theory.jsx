@@ -23,3 +23,25 @@
  * + Redux quản lý state tập trung giúp người dùng để Maintenance, tuy nhiên mỗi lần dispatch thì tất cả các reducer đều thực hiện.
  * + Ngược lại context có vẻ như về vấn đề quản lý lưu trữ và truy xuất state cũng không có vấn đề nếu ta rành cách tổ chức. Tuy nhiên về mặt quản lý code khi ta có nhiều state lồng nhau từ nhiều Provider khác nhau ta phải lần lượt wrap các component bên trong sử dụng các consumer, dễ bị rối và dễ bị render lại tất cả component được wrap không cần thiết -> nhìn code như kim tự tháp.
  */
+
+
+
+// Khóa 3 này sẽ học về life Cycle - React Function Component - Hooks.
+/**
+ * Đề cương khóa 3
+ *  + Form - Validation - JSS (styled - Components)
+ *        - Học cách CSS trong React như thế nào
+ *  + Life Cycle trong react 
+ *        - Life Cycle cũng là phần kiến thức quan trọng không kém gì Redux React
+ *  + Ant - Design (React UI component)
+ *        - Ant Design thì nó cũng khá giống như là bootstrap nhưng mà nó sẽ khác bootstrap ở một vài chỗ, khi vào chi tiết phần đó chúng ta sẽ tìm hiểu kĩ
+ *        - 
+ *  + Ôn tập react function component
+ *          - Kĩ thuật code trong React sau năm 2019 sử dụng rất là nhiều 
+ *  + Tìm hiểu các hooks cơ bản
+ *  + Sử dụng thư viện hook animation spring  
+ *          - Hướng dẫn cách đọc document và sử dụng nó như thế nào thay vì phải sử dụng thường xuyên các thư viện cũ
+ *  + Xây dựng ứng dụng game bầu cua
+ *  + Xây dựng ứng dụng game bói bài
+ *  + Xây dựng ứng dụng phòng thay đổi
+ */
